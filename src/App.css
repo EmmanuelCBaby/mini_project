@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -25,4 +25,38 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+} */
+
+.image {
+  float:left;
+}
+
+.movieList {
+  border: 2px ridge;
+  border-radius : 10px;
+  background-color: floralwhite;
+}
+
+.movieTitle {
+  font-family: 'Times New Roman';
+  font-size: 15px;
+  margin-left: 8%;
+}
+
+.movieLanguage {
+  font-family: 'Times New Roman';
+  font-size: 10px;
+  margin-left: 8%;
+}
+
+.movieRating {
+  font-family: 'Times New Roman';
+  font-size: 10px;
+  margin-left: 8%;
+}
+
+.movieReleaseDate {
+  font-family: 'Times New Roman';
+  font-size: 10px;
+  margin-left: 8%;
 }
