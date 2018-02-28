@@ -27,7 +27,11 @@
   to { transform: rotate(360deg); }
 } */
 
-.image {
+.movieImage {
+  float:left;
+}
+
+.personImage {
   float:left;
 }
 
@@ -58,5 +62,17 @@
 .movieReleaseDate {
   font-family: 'Times New Roman';
   font-size: 10px;
+  margin-left: 8%;
+}
+
+.personList {
+  border: 2px ridge;
+  border-radius : 10px;
+  background-color: floralwhite;
+}
+
+.personName {
+  font-family: 'Times New Roman';
+  font-size: 15px;
   margin-left: 8%;
 }

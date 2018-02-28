@@ -51,24 +51,34 @@ class App extends Component {
             <input type='text' placeholder='Search...' onChange={this.foundkeyword} value={this.state.keyword}></input>
             <select onChange={this.getCategory}>
               <option value='movie'>Movie</option>
-              <option value='person'>Actor/Actress</option>
-              <option value='person'>Director</option>
-              <option value='person'>Producer</option>
+              <option value='person'>Cast and Crew</option>
             </select>
             <button type='button' onClick={this.search}>Search</button>
             <div>
               {
                 this.state.details.map((element,index)=>{
-                  var poster = `https://image.tmdb.org/t/p/w92/${element.poster_path}`;
-                  return(
-                    <div className='movieList' key={index}>
-                    <img className='image' src={poster} alt='img' />
-                    <h2 className='movieTitle'>{element.title}</h2>
-                    <h6 className='movieLanguage'>Language: {element.original_language}</h6>
-                    <h6 className='movieRating'>Rating: {element.vote_average}</h6>
-                    <h6 className='movieReleaseDate'>Release Date: {element.release_date}</h6>
-                    </div>
-                  )
+                  var category = this.state.category;
+                  if(category === 'movie'){
+                    var poster = `https://image.tmdb.org/t/p/w92/${element.poster_path}`;
+                    return(
+                      <div className='movieList' key={index}>
+                      <img className='movieImage' src={poster} alt='img' />
+                      <h2 className='movieTitle'>{element.title}</h2>
+                      <h6 className='movieLanguage'>Language: {element.original_language}</h6>
+                      <h6 className='movieRating'>Rating: {element.vote_average}</h6>
+                      <h6 className='movieReleaseDate'>Release Date: {element.release_date}</h6>
+                      </div>
+                    );
+                  }
+                  else if(category === 'person'){
+                    var profile = `https://image.tmdb.org/t/p/w92/${element.profile_path}`;
+                    return(
+                      <div key={index}>
+                      <img src={profile} alt='img' />
+                      <h2>{element.name}</h2>
+                      </div>
+                    )
+                  }
                 })
               }
             </div>
